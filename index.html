@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body class="bg-light">
+      <div>
+    <div class="container d-flex flex-column aling-items-center justify-content-center my-3 rounded" style="max-width: 500px; background-color: rgb(237, 237, 237);">
+        
+        <span id="editHeading" class="text-center"></span>
+        <div class="input-group my-3">
+      <label class="input-group-text">Product Name</label>
+      <input type="text" id="productName" class="form-control" autofocus />
+    </div>
+
+    <div class="input-group my-3">
+        <label class="input-group-text">Price</label>
+        <input type="text" id="productPrice" class="form-control" />
+    </div>
+
+    <div class="my-3 text-center">
+
+    <div class="form-check form-check-inline">
+        <input type="radio" name="status" checked class="form-check-input" value="Pending">
+        <label for="" class="form-check-label">Pending</label>
+    </div>   
+
+    <div class="form-check form-check-inline">
+        <input type="radio" disabled name="status" class="form-check-input" value="Processing">
+        <label for="" class="form-check-label">Processing</label>
+    </div>   
+
+    <div class="form-check form-check-inline">
+        <input disabled type="radio" name="status" class="form-check-input" value="Completed">
+        <label for="" class="form-check-label">Completed</label>
+    </div>
+    </div>   
+
+    <button class="btn btn-primary m-3" id="addBtn" type="submit">Add</button>
+    </div>
+
+    <table class="table table-bordered border-dark container">
+        <thead>
+            <tr>
+                <th>Sr no.</th>
+                <th>Product Name :</th>
+                <th>Product Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+
+        </tbody>
+    </table>
+    <div id="loading" class="text-center"></div>
+</div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="index.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
