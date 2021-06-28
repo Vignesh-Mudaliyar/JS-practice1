@@ -8,22 +8,41 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
   </head>
-  <body class="bg-light">
-      <div>
+  <body class="bg-light" id="body">
+
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
+  <div class="toast align-items-center bg-dark text-white border-0" id="liveToast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body" id="toastText">
+        Product added successfully.
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+  </div>
+</div>
+
+
+    
+          <div> 
     <div class="container d-flex flex-column aling-items-center justify-content-center my-3 rounded" style="max-width: 500px; background-color: rgb(237, 237, 237);">
         
-        <span id="editHeading" class="text-center"></span>
+        <span id="editHeading" class="text-center"><h2>Add Product</h2></span>
         <div class="input-group my-3">
       <label class="input-group-text">Product Name</label>
       <input type="text" id="productName" class="form-control" autofocus />
     </div>
+    <div id="nameErr" class="text-center text-danger"></div>
+    
 
     <div class="input-group my-3">
         <label class="input-group-text">Price</label>
-        <input type="text" id="productPrice" class="form-control" />
+        <input type="number" id="productPrice" max="6" class="form-control" autofocus />
     </div>
+    <div id="priceErr" class="text-center text-danger"></div>
+
 
     <div class="my-3 text-center">
 
@@ -43,24 +62,41 @@
     </div>
     </div>   
 
-    <button class="btn btn-primary m-3" id="addBtn" type="submit">Add</button>
+    <button class="btn btn-primary m-3" id="addBtn" disabled type="submit">Add</button>
     </div>
 
-    <table class="table table-bordered border-dark container">
+    <table class="table table-bordered border-dark container" id="table">
         <thead>
-            <tr>
+            <tr class="text-center">
                 <th>Sr no.</th>
-                <th>Product Name :</th>
+                <th>Product Name </th>
                 <th>Product Price</th>
                 <th>Status</th>
                 <th>Actions</th>
             </tr>
         </thead>
-        <tbody id="tableBody">
+        <tbody id="tableBody" class="text-capitalize">
 
         </tbody>
     </table>
     <div id="loading" class="text-center"></div>
+    <div class="modal fade"  tabindex="-1" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">DELETE DATA</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            Do you really want to delete this Data?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onclick="confirmationTrue()">Yes</button>
+          </div>
+        </div>
+    </div>
+  </div>
 </div>
     <!-- JavaScript Bundle with Popper -->
     <script src="index.js"></script>
